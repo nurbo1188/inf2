@@ -105,21 +105,37 @@ export default function App() {
               <h2 className="text-4xl text-slate-900">{slide.title}</h2>
             </div>
             <p className="text-xl text-slate-600">{slide.content}</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
-              {slide.highlights?.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4 hover:shadow-md transition-shadow"
+            <div className="flex flex-col lg:flex-row gap-8 flex-1 overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1">
+                {slide.highlights?.map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4 hover:shadow-md transition-shadow"
+                  >
+                    <div className="w-10 h-10 bg-brand-secondary/10 rounded-xl flex items-center justify-center text-brand-secondary font-bold text-lg shrink-0">
+                      {idx + 1}
+                    </div>
+                    <span className="text-lg font-medium text-slate-700">{item}</span>
+                  </motion.div>
+                ))}
+              </div>
+              {slide.image && (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="lg:w-1/3 h-48 lg:h-auto"
                 >
-                  <div className="w-12 h-12 bg-brand-secondary/10 rounded-xl flex items-center justify-center text-brand-secondary font-bold text-xl">
-                    {idx + 1}
-                  </div>
-                  <span className="text-xl font-medium text-slate-700">{item}</span>
+                  <img 
+                    src={slide.image} 
+                    alt={slide.title} 
+                    className="w-full h-full object-cover rounded-2xl shadow-lg"
+                    referrerPolicy="no-referrer"
+                  />
                 </motion.div>
-              ))}
+              )}
             </div>
           </div>
         );
@@ -180,20 +196,38 @@ export default function App() {
               <Icon size={40} className="text-brand-primary" />
               <h2 className="text-4xl text-slate-900">{slide.title}</h2>
             </div>
-            <p className="text-2xl text-slate-600">{slide.content}</p>
-            <div className="space-y-4 flex-1">
-              {slide.highlights?.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="flex items-center gap-6 p-6 bg-white rounded-2xl border border-slate-100 shadow-sm"
+            <div className="flex flex-col lg:flex-row gap-12 flex-1">
+              <div className="flex-1 space-y-6">
+                <p className="text-2xl text-slate-600">{slide.content}</p>
+                <div className="space-y-4">
+                  {slide.highlights?.map((item, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: idx * 0.1 }}
+                      className="flex items-center gap-6 p-5 bg-white rounded-2xl border border-slate-100 shadow-sm"
+                    >
+                      <CheckCircle2 className="text-brand-primary shrink-0" size={24} />
+                      <span className="text-xl text-slate-700 font-medium">{item}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+              {slide.image && (
+                <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="lg:w-2/5"
                 >
-                  <CheckCircle2 className="text-brand-primary shrink-0" size={28} />
-                  <span className="text-2xl text-slate-700 font-medium">{item}</span>
+                  <img 
+                    src={slide.image} 
+                    alt={slide.title} 
+                    className="w-full h-[400px] object-cover rounded-3xl shadow-xl"
+                    referrerPolicy="no-referrer"
+                  />
                 </motion.div>
-              ))}
+              )}
             </div>
           </div>
         );
@@ -229,26 +263,42 @@ export default function App() {
               <Icon size={40} className="text-brand-primary" />
               <h2 className="text-4xl text-slate-900">{slide.title}</h2>
             </div>
-            <div className="space-y-6">
-              {Array.isArray(slide.content) ? (
-                slide.content.map((p, i) => (
-                  <p key={i} className="text-2xl text-slate-700 leading-relaxed">
-                    {p}
+            <div className="flex flex-col lg:flex-row gap-12 flex-1">
+              <div className="flex-1 space-y-6">
+                {Array.isArray(slide.content) ? (
+                  slide.content.map((p, i) => (
+                    <p key={i} className="text-2xl text-slate-700 leading-relaxed">
+                      {p}
+                    </p>
+                  ))
+                ) : (
+                  <p className="text-2xl text-slate-700 leading-relaxed">
+                    {slide.content}
                   </p>
-                ))
-              ) : (
-                <p className="text-2xl text-slate-700 leading-relaxed">
-                  {slide.content}
-                </p>
-              )}
-              {slide.highlights && (
-                <div className="flex flex-wrap gap-4 mt-8">
-                  {slide.highlights.map((h, i) => (
-                    <span key={i} className="px-6 py-3 bg-slate-100 text-slate-700 rounded-full text-lg font-semibold">
-                      {h}
-                    </span>
-                  ))}
-                </div>
+                )}
+                {slide.highlights && (
+                  <div className="flex flex-wrap gap-4 mt-8">
+                    {slide.highlights.map((h, i) => (
+                      <span key={i} className="px-6 py-3 bg-slate-100 text-slate-700 rounded-full text-lg font-semibold">
+                        {h}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+              {slide.image && (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="lg:w-1/2"
+                >
+                  <img 
+                    src={slide.image} 
+                    alt={slide.title} 
+                    className="w-full h-[450px] object-cover rounded-3xl shadow-2xl"
+                    referrerPolicy="no-referrer"
+                  />
+                </motion.div>
               )}
             </div>
           </div>

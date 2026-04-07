@@ -46,6 +46,7 @@ export const SLIDES: Slide[] = [
     type: 'grid',
     highlights: ["Текст (книги, сообщения)", "Изображения (фото)", "Звук (музыка)", "Видео"],
     icon: Info,
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
     explanation: "Объясняем базовое понятие информации через привычные примеры."
   },
   {
@@ -57,6 +58,7 @@ export const SLIDES: Slide[] = [
     ],
     type: 'content',
     icon: Binary,
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
     explanation: "Даем определение цифровым носителям."
   },
   {
@@ -70,6 +72,7 @@ export const SLIDES: Slide[] = [
       "Видео → набор кадров и звуков"
     ],
     icon: Binary,
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
     explanation: "Объясняем принцип двоичного кодирования."
   },
   {
@@ -86,6 +89,7 @@ export const SLIDES: Slide[] = [
       "Облако (интернет)"
     ],
     icon: Database,
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800",
     explanation: "Обзор всех типов носителей, о которых пойдет речь далее."
   },
   {
@@ -115,6 +119,7 @@ export const SLIDES: Slide[] = [
     type: 'content',
     highlights: ["Маленькая", "Удобная", "Всегда с собой"],
     icon: Usb,
+    image: "https://images.unsplash.com/photo-1622533051079-47fd1f26f7a6?auto=format&fit=crop&q=80&w=800",
     explanation: "Самый популярный переносной носитель."
   },
   {
@@ -124,6 +129,7 @@ export const SLIDES: Slide[] = [
     type: 'content',
     highlights: ["microSD — самая частая", "Очень компактная"],
     icon: Smartphone,
+    image: "https://images.unsplash.com/photo-1558244402-286dd748c593?auto=format&fit=crop&q=80&w=800",
     explanation: "Объясняем, где дети чаще всего встречают карты памяти (смартфоны)."
   },
   {
@@ -133,6 +139,7 @@ export const SLIDES: Slide[] = [
     type: 'content',
     highlights: ["Устарели", "Легко царапаются", "Мало места"],
     icon: Disc,
+    image: "https://images.unsplash.com/photo-1526733169359-81173c67555f?auto=format&fit=crop&q=80&w=800",
     explanation: "История носителей. Сейчас используются редко, но знать о них нужно."
   },
   {
@@ -142,6 +149,7 @@ export const SLIDES: Slide[] = [
     type: 'list',
     highlights: ["Google Drive", "iCloud", "Яндекс Диск"],
     icon: Cloud,
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800",
     explanation: "Современный способ хранения без физического устройства в руках."
   },
   {
@@ -151,6 +159,7 @@ export const SLIDES: Slide[] = [
     type: 'grid',
     highlights: ["Компьютеры", "Телефоны", "Интернет", "Школы и работа"],
     icon: Monitor,
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800",
     explanation: "Примеры применения в повседневной жизни."
   },
   {
@@ -160,6 +169,7 @@ export const SLIDES: Slide[] = [
     type: 'list',
     highlights: ["Хранить важную информацию", "Передавать данные друзьям", "Учиться и развиваться"],
     icon: BookOpen,
+    image: "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&q=80&w=800",
     explanation: "Подчеркиваем значимость технологий."
   },
   {
@@ -173,6 +183,7 @@ export const SLIDES: Slide[] = [
       "Используй пароли для защиты"
     ],
     icon: ShieldCheck,
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
     explanation: "Важный блок про цифровую гигиену."
   },
   {
@@ -189,6 +200,7 @@ export const SLIDES: Slide[] = [
     content: "Спасибо за внимание! Есть ли у вас вопросы?",
     type: 'title',
     icon: HelpCircle,
+    image: "https://images.unsplash.com/photo-1531256456869-ce942a665e80?auto=format&fit=crop&q=80&w=800",
     explanation: "Завершение презентации и время для обсуждения."
   }
 ];
